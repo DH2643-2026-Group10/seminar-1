@@ -3,6 +3,7 @@ import './App.css'
 import CodeSnippet from './CodeSnippet'
 import { ThemeContext } from './ThemeContext'
 import ThemeExtra from './ThemeExtra'
+import WindowWidth from './WindowWidth'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -46,6 +47,21 @@ function App() {
         </ThemeContext.Provider>
         <CodeSnippet code={`const theme = useContext(ThemeContext)`} />
 
+      </section>
+
+      <section>
+        <h2>useEffect</h2>
+        <p>
+          Lets a component talk to external systems outside of React, like listening to the browser's window resize event.
+        </p>
+        
+        <WindowWidth/>
+
+        <CodeSnippet code={`useEffect(() => {
+  const handleResize = () => setWidth(window.innerWidth);
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);`} />
       </section>
 
 
