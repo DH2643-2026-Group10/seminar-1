@@ -1,4 +1,4 @@
-This is a demo of React Hooks
+This is a demo of how React Hooks work
 
 ## How to run
 
